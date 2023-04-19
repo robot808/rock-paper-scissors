@@ -22,8 +22,13 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-  // ask the player what their choice is
-  const choice = prompt("Rock, paper, or scissors?").toLowerCase();
+  // ask the player for their choice
+  let choice = prompt("Will you choose rock, paper, or scissors?").toLowerCase();
+
+  // verify the player's choice
+  while (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
+    choice = prompt("Error: invalid entry\nPlease enter rock, paper, or scissors.").toLowerCase();
+  }
 
   // alert the player what was chosen
   alert(`You have chosen ${choice}.`);
