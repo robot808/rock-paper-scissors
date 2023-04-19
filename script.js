@@ -73,7 +73,7 @@ function playRound (playerSelection, computerSelection) {
       result = "You win! Scissors beats paper!";
     }
     else if (computerSelection === "scissors") {
-      result = "It's a draw";
+      result = "It's a draw!";
     }
   }
 
@@ -83,3 +83,39 @@ function playRound (playerSelection, computerSelection) {
   // return the result
   return result;
 }
+
+function game() {
+  let computerScore = 0;
+  let playerScore = 0;
+
+  // play five rounds, keeping track of the score
+  for (let i = 0; i < 5; i++) {
+    let result = playRound(getPlayerChoice(), getComputerChoice()).slice(4, 5);
+
+    switch (result) {
+      case "l":
+        ++computerScore;
+        console.log(`Round ${i + 1}: computer`);
+        break;
+      case "w":
+        ++playerScore;
+        console.log(`Round ${i + 1}: player`);
+        break;
+      default:
+        console.log(`Round ${i + 1}: draw`);
+    }
+  }
+
+  // alert the player of the game result
+  if (computerScore > playerScore) {
+    alert("You lost the game! Better luck next time!");
+  }
+  else if (playerScore > computerScore) {
+    alert("You won the game! Congratulations!");
+  }
+  else {
+    alert("The game ended in a tie! Play again!");
+  }
+}
+
+game();
