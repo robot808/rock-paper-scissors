@@ -38,3 +38,48 @@ function getPlayerChoice() {
   // return the player's choice
   return choice;
 }
+
+function playRound (playerSelection, computerSelection) {
+  // determine the result
+  let result;
+
+  if (playerSelection === "rock") {
+    if (computerSelection === "rock") {
+      result = "It's a draw!";
+    } 
+    else if (computerSelection === "paper") {
+      result = "You lose! Paper beats rock!";
+    }
+    else if (computerSelection === "scissors") {
+      result = "You win! Rock beats scissors!";
+    }
+  }
+  else if (playerSelection === "paper") {
+    if (computerSelection === "rock") {
+      result = "You Win! Paper beats rock!";
+    } 
+    else if (computerSelection === "paper") {
+      result = "It's a draw";
+    }
+    else if (computerSelection === "scissors") {
+      result = "You lose! Scissors beats paper!";
+    }
+  }
+  else if (playerSelection === "scissors") {
+    if (computerSelection === "rock") {
+      result = "You lose! Rock beats scissors!";
+    } 
+    else if (computerSelection === "paper") {
+      result = "You win! Scissors beats paper!";
+    }
+    else if (computerSelection === "scissors") {
+      result = "It's a draw";
+    }
+  }
+
+  // alert the player of the result
+  alert(result);
+
+  // return the result
+  return result;
+}
