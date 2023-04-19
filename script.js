@@ -20,3 +20,14 @@ function getComputerChoice() {
   // return the computer's choice
   return choice; 
 }
+
+function getPlayerChoice() {
+  // ask the player what their choice is
+  const choice = prompt("Rock, paper, or scissors?").toLowerCase();
+
+  // alert the player what was chosen
+  alert(`You have chosen ${choice}.`);
+
+  // return the player's choice
+  return choice;
+}
