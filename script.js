@@ -8,8 +8,10 @@ function getComputerChoice() {
   switch (random) {
     case 1:
       choice = "rock";
+      break;
     case 2:
       choice = "paper";
+      break;
     case 3:
       choice = "scissors";
   }
@@ -25,7 +27,7 @@ function getPlayerChoice() {
   // ask the player for their choice
   let choice = prompt("Will you choose rock, paper, or scissors?").toLowerCase();
 
-  // verify the player's choice
+  // validate the player's choice
   while (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
     choice = prompt("Error: invalid entry\nPlease enter rock, paper, or scissors.").toLowerCase();
   }
