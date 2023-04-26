@@ -17,7 +17,7 @@ function getComputerChoice() {
   }
 
   // alert the player what was chosen
-  alert(`The computer has chosen ${choice}.`);
+  // alert(`The computer has chosen ${choice}.`);
 
   // return the computer's choice
   return choice; 
@@ -44,41 +44,53 @@ function playRound (playerSelection, computerSelection) {
   let result;
 
   if (playerSelection === "rock") {
+    result = "You have chosen rock!\n";
     if (computerSelection === "rock") {
-      result = "It's a draw!";
+      result += "The computer has chosen rock!\n";
+      result += "It's a draw!";
     } 
     else if (computerSelection === "paper") {
-      result = "You lose! Paper beats rock!";
+      result += "The computer has chosen paper!\n";
+      result += "You lose! Paper beats rock!";
     }
     else if (computerSelection === "scissors") {
-      result = "You win! Rock beats scissors!";
+      result += "The computer has chosen scissors!\n";
+      result += "You win! Rock beats scissors!";
     }
   }
   else if (playerSelection === "paper") {
+    result = "You have chosen paper!\n";
     if (computerSelection === "rock") {
-      result = "You Win! Paper beats rock!";
+      result += "The computer has chosen rock!\n";
+      result += "You Win! Paper beats rock!";
     } 
     else if (computerSelection === "paper") {
-      result = "It's a draw";
+      result += "The computer has chosen paper!\n";
+      result += "It's a draw";
     }
     else if (computerSelection === "scissors") {
-      result = "You lose! Scissors beats paper!";
+      result += "The computer has chosen scissors!\n";
+      result += "You lose! Scissors beats paper!";
     }
   }
   else if (playerSelection === "scissors") {
+    result = "You have chosen scissors!\n";
     if (computerSelection === "rock") {
-      result = "You lose! Rock beats scissors!";
+      result += "The computer has chosen rock!\n";
+      result += "You lose! Rock beats scissors!";
     } 
     else if (computerSelection === "paper") {
-      result = "You win! Scissors beats paper!";
+      result += "The computer has chosen paper!\n";
+      result += "You win! Scissors beats paper!";
     }
     else if (computerSelection === "scissors") {
-      result = "It's a draw!";
+      result += "The computer has chosen scissors!\n";
+      result += "It's a draw!";
     }
   }
 
   // alert the player of the result
-  alert(result);
+  results.innerText = result;
 
   // return the result
   return result;
@@ -132,3 +144,5 @@ const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
   playRound("scissors", getComputerChoice());
 });
+
+const results = document.querySelector(".results");
