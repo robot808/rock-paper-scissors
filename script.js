@@ -118,4 +118,17 @@ function game() {
   }
 }
 
-game();
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+  playRound("rock", getComputerChoice());
+});
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+  playRound("paper", getComputerChoice());
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+  playRound("scissors", getComputerChoice());
+});
