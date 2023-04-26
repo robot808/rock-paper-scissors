@@ -36,44 +36,44 @@ function getPlayerChoice() {
   return choice;
 }
 */
-function playRound (playerSelection, computerSelection) {
+function playRound (playerChoice, computerChoice) {
   // determine the result
-  let result = `You have chosen ${playerSelection}!
-                The computer has chosen ${computerSelection}!\n`;
-  let win = `You win! ${playerSelection} beats ${computerSelection}!`;
-  let lose = `You lose! ${computerSelection} beats ${playerSelection}!`;
+  let result = `You have chosen ${playerChoice}!
+                The computer has chosen ${computerChoice}!\n`;
+  let win = `You win! ${playerChoice} beats ${computerChoice}!`;
+  let lose = `You lose! ${computerChoice} beats ${playerChoice}!`;
   let draw = "It's a draw!";
 
-  if (playerSelection === "rock") {
-    if (computerSelection === "rock") {
+  if (playerChoice === "rock") {
+    if (computerChoice === "rock") {
       result += draw;
     } 
-    else if (computerSelection === "paper") {
+    else if (computerChoice === "paper") {
       result += lose;
     }
-    else if (computerSelection === "scissors") {
+    else if (computerChoice === "scissors") {
       result += win;
     }
   }
-  else if (playerSelection === "paper") {
-    if (computerSelection === "rock") {
+  else if (playerChoice === "paper") {
+    if (computerChoice === "rock") {
       result += win;
     } 
-    else if (computerSelection === "paper") {
+    else if (computerChoice === "paper") {
       result += draw;
     }
-    else if (computerSelection === "scissors") {
+    else if (computerChoice === "scissors") {
       result += lose;
     }
   }
-  else if (playerSelection === "scissors") {
-    if (computerSelection === "rock") {
+  else if (playerChoice === "scissors") {
+    if (computerChoice === "rock") {
       result += lose;
     } 
-    else if (computerSelection === "paper") {
+    else if (computerChoice === "paper") {
       result += win;
     }
-    else if (computerSelection === "scissors") {
+    else if (computerChoice === "scissors") {
       result += draw;
     }
   }
@@ -119,6 +119,7 @@ function game() {
   }
 }
 */
+/*
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
   playRound("rock", getComputerChoice());
@@ -132,6 +133,14 @@ paper.addEventListener("click", () => {
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
   playRound("scissors", getComputerChoice());
+});
+*/
+const buttons = document.querySelectorAll(".buttons button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const playerChoice = button.id.toString();
+    playRound(playerChoice, getComputerChoice());
+  });
 });
 
 const results = document.querySelector(".results");
