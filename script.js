@@ -96,10 +96,20 @@ function checkScore () {
 
   if (playerScore >= 5) {
     game.textContent = "You won the game! Congratulations!";
+    resetGame();
   }
   else if (computerScore >= 5) {
     game.textContent = "You lost the game! Better luck next time!";
+    resetGame();
   }
+  else {
+    game.textContent = "";
+  }
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
 }
 
 /*
@@ -154,15 +164,16 @@ scissors.addEventListener("click", () => {
 });
 */
 
+const score = document.querySelector("div.score");
+const round = document.querySelector("div.round");
+const game = document.querySelector("div.game");
+const buttons = document.querySelectorAll(".buttons button");
+
 let playerScore = 0;
 let computerScore = 0;
-const score = document.querySelector("div.score");
+
 checkScore();
 
-const buttons = document.querySelectorAll(".buttons button");
 buttons.forEach((button) => {
   button.addEventListener("click", makeChoice);
 });
-
-const round = document.querySelector("div.round");
-const game = document.querySelector("div.game");
