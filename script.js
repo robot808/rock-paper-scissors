@@ -76,6 +76,21 @@ function playRound (playerChoice, computerChoice) {
   return score;
 }
 
+function makeChoice (event) {
+  const playerChoice = event.target.id.toString();
+  const score = playRound(playerChoice, getComputerChoice());
+  if (score) {
+    switch (score) {
+      case 1:
+        playerScore++;
+        break;
+      default:
+        computerScore++;
+    }
+  }
+  checkScore();
+}
+
 function checkScore () {
   score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
 }
@@ -139,20 +154,7 @@ checkScore();
 
 const buttons = document.querySelectorAll(".buttons button");
 buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const playerChoice = button.id.toString();
-    const score = playRound(playerChoice, getComputerChoice());
-    if (score) {
-      switch (score) {
-        case 1:
-          playerScore++;
-          break;
-        default:
-          computerScore++;
-      }
-    }
-    checkScore();
-  });
+  button.addEventListener("click", makeChoice);
 });
 
 const results = document.querySelector("div.results");
