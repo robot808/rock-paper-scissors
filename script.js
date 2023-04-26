@@ -70,7 +70,7 @@ function playRound (playerChoice, computerChoice) {
   }
 
   // alert the player of the result
-  results.innerText = result;
+  round.innerText = result;
 
   // return the result
   return score;
@@ -93,6 +93,13 @@ function makeChoice (event) {
 
 function checkScore () {
   score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+
+  if (playerScore >= 5) {
+    game.textContent = "You won the game! Congratulations!";
+  }
+  else if (computerScore >= 5) {
+    game.textContent = "You lost the game! Better luck next time!";
+  }
 }
 
 /*
@@ -157,4 +164,5 @@ buttons.forEach((button) => {
   button.addEventListener("click", makeChoice);
 });
 
-const results = document.querySelector("div.results");
+const round = document.querySelector("div.round");
+const game = document.querySelector("div.game");
