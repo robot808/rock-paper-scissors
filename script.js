@@ -9,30 +9,30 @@ function resetGame() {
   computerScore = 0;
   displayScore();
   round.innerText = "";
-  game.innerText = "";
+  winner.innerText = "";
   reset.style.display = "none"; // re-hide reset button
 }
 
 function checkScore () {
-  // diplay winner in game div
+  // diplay winner in winner div
   const winningScore = 5;
   if (playerScore >= winningScore) {
-    game.innerText += `You won the game! Congratulations!
+    winner.innerText += `You won the game! Congratulations!
                         Click the reset button below to play again!`;
     reset.style.display = "block"; // unhide reset button
   }
   else if (computerScore >= winningScore) {
-    game.innerText += `You lost the game! Better luck next time!
+    winner.innerText += `You lost the game! Better luck next time!
                         Click the reset button below to play again!`;
     reset.style.display = "block"; // unhide reset button
   }
   else {
-    game.textContent = "";
+    winner.textContent = "";
   }
 }
 
 function makeChoice (event) {
-  if (game.innerText) return; // do nothing if awaiting game reset
+  if (winner.innerText) return; // do nothing if awaiting game reset
 
   // get player choice from button id and play a round
   const playerChoice = event.target.id.toString();
@@ -131,7 +131,7 @@ let computerScore = 0;
 displayScore();
 
 const round = document.querySelector(".round p");
-const game = document.querySelector(".game p");
+const winner = document.querySelector(".winner p");
 const reset = document.querySelector("button#reset");
 
 const buttons = document.querySelectorAll(".buttons button");
