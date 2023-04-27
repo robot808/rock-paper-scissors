@@ -18,12 +18,12 @@ function checkScore () {
   const winningScore = 5;
   if (playerScore >= winningScore) {
     winner.innerText += `You won the game! Congratulations!
-                        Click the reset button below to play again!`;
+                        Click the button below to play again!`;
     reset.style.display = "block"; // unhide reset button
   }
   else if (computerScore >= winningScore) {
     winner.innerText += `You lost the game! Better luck next time!
-                        Click the reset button below to play again!`;
+                        Click the button below to play again!`;
     reset.style.display = "block"; // unhide reset button
   }
   else {
