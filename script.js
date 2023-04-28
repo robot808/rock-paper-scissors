@@ -71,8 +71,8 @@ function getComputerChoice() {
 }
 
 function playRound (playerChoice, computerChoice) {
-  let result = `You have chosen ${playerChoice}!
-                The computer has chosen ${computerChoice}!\n`;
+  let result = `You have chosen ${playerChoice}.
+                The computer has chosen ${computerChoice}.\n`;
   let win = `You win! ${playerChoice} beats ${computerChoice}!`;
   let lose = `You lose! ${computerChoice} beats ${playerChoice}!`;
   let draw = "It's a draw!";
