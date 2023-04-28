@@ -19,12 +19,12 @@ function checkScore () {
   if (playerScore >= winningScore) {
     winner.innerText += `You won the game! Congratulations!
                         Click the button below to play again!`;
-    reset.style.display = "block"; // unhide reset button
+    reset.style.display = "inline"; // unhide reset button
   }
   else if (computerScore >= winningScore) {
     winner.innerText += `You lost the game! Better luck next time!
                         Click the button below to play again!`;
-    reset.style.display = "block"; // unhide reset button
+    reset.style.display = "inline"; // unhide reset button
   }
   else {
     winner.textContent = "";
@@ -125,7 +125,7 @@ function playRound (playerChoice, computerChoice) {
   return score;
 }
 
-const score = document.querySelector(".score p");
+const score = document.querySelector(".score h4");
 let playerScore = 0;
 let computerScore = 0;
 displayScore();

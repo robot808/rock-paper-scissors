@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+body {
+  height: 50%;
+}
+
+div {
+  text-align: center;
+}
+
+button {
+  width: 96px;
+  height: 32px;
+  margin: 16px;
+}
+
+.buttons button {
+  height: 96px;
+}
